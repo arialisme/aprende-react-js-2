@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -6,7 +6,13 @@ import "./App.css";
 //  return <h2>{props.title}</h2>;
 //}
 
-const Hello = (props) => <h2>{props.title}</h2>;
+//const Hello = (props) => <h2>{props.title}</h2>;
+
+class Hello extends Component {
+  render() {
+    return <h2>{this.props.title}</h2>;
+  }
+}
 
 function App() {
   return (
