@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function Hello(props) {
-  return <h2>Bienvenidos a este curso</h2>;
+  return <h2>{props.title}</h2>;
 }
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Hello />
+        <Hello title="Hello from props" />
       </header>
     </div>
   );
