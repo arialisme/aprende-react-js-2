@@ -14,12 +14,33 @@ class Hello extends Component {
   }
 }
 
+class Text extends Component {
+  render() {
+    const textoSegunBool = this.props.isActivated ? "On" : "Off";
+    const mappedNumbers = this.props.arrayOfNumbers.map((n) => n * 2);
+
+    return (
+      <div>
+        <p>{mappedNumbers.join(", ")}</p>
+        <p>{this.props.objectWithInfo.key}</p>
+      </div>
+    );
+  }
+}
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Hello title="Hello from props" />
+        <Text
+          arrayOfNumbers={[2, 3, 10]}
+          objectWithInfo={{ key: " First value", key2: "otherValue" }}
+          isActivated
+          number={2}
+          text="Texto en string"
+        />
       </header>
     </div>
   );
