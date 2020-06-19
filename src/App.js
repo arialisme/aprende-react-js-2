@@ -3,9 +3,13 @@ import logo from "./logo.svg";
 import "./App.css";
 
 class Contador extends Component {
+  constructor() {
+    super();
+    this.state = { contador: 1 };
+  }
+
   render() {
-    const contador = 0;
-    return <span>{contador}</span>;
+    return <span>{this.state.contador}</span>;
   }
 }
 
