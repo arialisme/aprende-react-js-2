@@ -2,19 +2,19 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-class Title extends Component {
+class Contador extends Component {
   render() {
-    return <h1>{this.props.text}</h1>;
+    const contador = 0;
+    return <span>{contador}</span>;
   }
 }
-
-Title.defaultProps = { text: "Titulo por defecto" };
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Title text="Otro titulo desde props" />
+        <p>Primer componente con state</p>
+        <Contador />
       </div>
     );
   }
