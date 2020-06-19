@@ -2,17 +2,26 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-class App extends Component {
-  state = { name: "Elaimy Arias Lismé" };
+class Contador extends Component {
+  constructor() {
+    super();
+    this.state = { contador: 1 };
+    setInterval(() => {
+      this.setState({ contador: this.state.contador + 1 });
+    }, 1000);
+  }
 
+  render() {
+    return <span>{this.state.contador}</span>;
+  }
+}
+
+class App extends Component {
   render() {
     return (
       <div className="App">
-        <h2>Hello {this.state.name}</h2>
-        <p>
-          Este componente de ejemplo es para que veas como inicializar el estdo
-          de otra. Prueba!!
-        </p>
+        <p>Primer componente con state</p>
+        <Contador />
       </div>
     );
   }
