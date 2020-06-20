@@ -1,12 +1,15 @@
 import React, { Component } from "react";
-import CondicionalSection from "./sections/condicional";
 import "./App.css";
 
 class App extends Component {
   render() {
+    const numbers = [1, 1, 3, 4, 5];
     return (
       <div className="App">
-        <CondicionalSection />
+        <h4>Trabajando con las Listas</h4>
+        {numbers.map((number, index) => {
+          return <p key={index}>Soy el numero {number}</p>;
+        })}
       </div>
     );
   }
