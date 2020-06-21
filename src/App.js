@@ -12,14 +12,69 @@ class Box extends Component {
   }
 }
 
+class Article extends Component {
+  render() {
+    console.log("Estoy en el componente Article");
+    return (
+      <section>
+        <h2>{this.props.title}</h2>
+        <p>
+          <em>Escrito por {this.props.author}</em>
+        </p>
+        <Box>{this.props.date}</Box>
+        <article>{this.props.children}</article>
+      </section>
+    );
+  }
+}
+
 class App extends Component {
   render() {
     console.log("Estoy en el render del componente App");
     return (
       <div className="App">
         <h4>Children props</h4>
-        <Box>Hola! soy un children!</Box>
-        <Box>Box con otro contenido</Box>
+        <Article
+          author="Elaimy"
+          date={new Date().toLocaleDateString()}
+          title="Artículo sobre la prop children"
+        >
+          <p>
+            El contenido que envolvemos dentro del Componente Article será
+            enviado al componente como this.props.children.
+          </p>
+          <strong>
+            Y mantiene las etiquetas y componentes que hayas añadido dentro.
+          </strong>
+        </Article>
+
+        <Article
+          author="Gabriel"
+          date={new Date().toLocaleDateString()}
+          title="Artículo 2"
+        >
+          <p>
+            El contenido que envolvemos dentro del Componente Article será
+            enviado al componente como this.props.children.
+          </p>
+          <strong>
+            Y mantiene las etiquetas y componentes que hayas añadido dentro.
+          </strong>
+        </Article>
+
+        <Article
+          author="Elaimy Arias Lismé"
+          date={new Date().toLocaleDateString()}
+          title="Otro Artículo"
+        >
+          <p>
+            El contenido que envolvemos dentro del Componente Article será
+            enviado al componente como this.props.children.
+          </p>
+          <strong>
+            Y mantiene las etiquetas y componentes que hayas añadido dentro.
+          </strong>
+        </Article>
       </div>
     );
   }
