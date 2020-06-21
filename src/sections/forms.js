@@ -1,16 +1,25 @@
 import React, { Component } from "react";
 
 export default class Forms extends Component {
+  constructor() {
+    console.log(
+      "Estoy en el constructor del Componente Forms, Inicializa el estado del componente"
+    );
+    super();
+    this.state = { inputName: "", inputTwitter: "@", inputTerms: true };
+  }
+
   handleSubmit = (e) => {
+    console.log("Estoy en el metodo handlesubmit");
     e.preventDefault();
-    const name = this.inputName.value;
-    const email = document.getElementById("twitter").value;
-    console.log({ name, email });
+    console.log(this.state);
   };
 
   handleChange = (e) => {
+    console.log("Estoy en el metodo handleChange");
     console.log("handleChange");
     console.log(e.target.checked);
+    this.setState({ inputTerms: e.target.checked });
   };
 
   render() {
@@ -24,8 +33,10 @@ export default class Forms extends Component {
             <input
               id="name"
               name="userName"
+              onChange={(e) => this.setState({ inputName: e.target.value })}
               placeholder="Introduce el nombre"
               ref={(inputElement) => (this.inputName = inputElement)}
+              value={this.state.inputName}
             />
           </p>
           <p>
@@ -33,13 +44,19 @@ export default class Forms extends Component {
             <input
               id="twitter"
               name="twitterAccount"
+              onChange={(e) => this.setState({ inputTwitter: e.target.value })}
               placeholder="Introduce tu twitter"
+              value={this.state.inputTwitter}
             />
           </p>
           <p>
             <label>
-              <input onChange={this.handleChange} type="checkbox" /> Accepted
-              terms
+              <input
+                checked={this.state.inputTerms}
+                onChange={this.handleChange}
+                type="checkbox"
+              />
+              Accepted terms
             </label>
           </p>
           <button>Enviar</button>
