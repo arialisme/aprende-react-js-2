@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Render from "./sections/life-cycle/render";
+import EjemploDeComponentDidMount from "./sections/life-cycle/componentDidMount";
 import "./App.css";
 
 class App extends Component {
@@ -7,7 +7,7 @@ class App extends Component {
     console.log("render del componente App");
     return (
       <div className="App">
-        <Render />
+        <EjemploDeComponentDidMount />
       </div>
     );
   }
