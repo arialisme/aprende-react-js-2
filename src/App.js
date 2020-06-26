@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import RefactorDeEjemploDeCicloDeActualizacion from "./sections/life-cycle/refactorDeEjemploCicloDeActualizacion";
+import RefactorDeEjemploDeCicloDeActualizacion from "./sections/life-cycle/shouldComponentUpdate";
 import "./App.css";
 
 class App extends Component {
