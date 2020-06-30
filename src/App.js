@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import RefactorDeEjemploDeCicloDeActualizacion from "./sections/life-cycle/componentDidUpddate";
+import EjemploDeComponentWillUnmonunt from "./sections/life-cycle/componentWillUnmount";
 import "./App.css";
 
 class App extends Component {
@@ -7,7 +7,7 @@ class App extends Component {
     console.log("render del componente App");
     return (
       <div className="App">
-        <RefactorDeEjemploDeCicloDeActualizacion />
+        <EjemploDeComponentWillUnmonunt />
       </div>
     );
   }
